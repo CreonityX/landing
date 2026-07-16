@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { LogoFacebook, LogoLinkedin, Globe } from '@gravity-ui/icons';
 
 // Standard SVG for Instagram as it's not in Gravity UI icons
@@ -22,9 +23,20 @@ export default function FooterSection() {
     <footer className="footer-section">
       <div className="footer-top">
         <div className="footer-brand">
-          <img src="/assets/creonity-logo.png" alt="Creonity" className="footer-logo" />
+          <Link href="/" style={{ textDecoration: 'none' }}>
+            <span style={{ 
+              fontFamily: 'Champ Black, sans-serif', 
+              fontSize: '28px', 
+              color: '#111',
+              lineHeight: 1
+            }}>
+              creonity
+            </span>
+          </Link>
           <div className="footer-downloads" style={{ marginTop: '16px' }}>
-            <button className="footer-btn">Sign up</button>
+            <Link href="/signup">
+              <button className="footer-btn">Sign up</button>
+            </Link>
           </div>
         </div>
 

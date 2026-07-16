@@ -2,6 +2,7 @@ import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import FooterSection from "../components/FooterSection";
+import Navbar from "../components/navbar";
 
 export default function Home() {
   return (
@@ -20,38 +21,7 @@ export default function Home() {
           <div className="hero-overlay"></div>
         </div>
 
-        <nav className="navbar">
-          <div className="nav-left">
-            <a href="/" className="logo-link">
-              <img src="/assets/creonity-logo.png" alt="Creonity" className="nav-logo" />
-            </a>
-          </div>
-          
-          <div className="nav-center">
-            <a href="#" className="nav-link">Creators</a>
-            <a href="#" className="nav-link">Brands</a>
-            <a href="#" className="nav-link">Monetization</a>
-            <a href="#" className="nav-link">Analytics</a>
-            <a href="#" className="nav-link">Pricing</a>
-          </div>
-          
-          <div className="nav-right" style={{ position: 'relative', zIndex: 50 }}>
-            <Link 
-              href={process.env.NODE_ENV === 'production' ? 'https://app.creonity.com/login' : 'http://localhost:3002/login'}
-              className="nav-btn-login"
-              style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
-            >
-              Log in
-            </Link>
-            <Link 
-              href="/signup" 
-              className="nav-btn-signup"
-              style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
-            >
-              Sign up
-            </Link>
-          </div>
-        </nav>
+        <Navbar transparent={true} />
 
         <div className="hero-content">
           <h1 className="hero-title">Your ideas, powered by Creonity</h1>
@@ -364,6 +334,28 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="final-cta-section" style={{ padding: '120px 24px', backgroundColor: '#ffffff', textAlign: 'center' }}>
+        <h2 style={{ fontFamily: 'PP Right Grotesk Wide, sans-serif', fontSize: '56px', fontWeight: 700, marginBottom: '24px', letterSpacing: '-1px', color: '#111' }}>
+          Ready to start your journey?
+        </h2>
+        <p style={{ fontSize: '20px', color: '#555', marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px' }}>
+          Join thousands of creators and brands who are already building the future of digital content on Creonity.
+        </p>
+        <Link 
+          href="/signup" 
+          className="btn-cta-main"
+          style={{ 
+            textDecoration: 'none', 
+            display: 'inline-block',
+            backgroundColor: '#111',
+            color: '#fff',
+            fontSize: '18px'
+          }}
+        >
+          Sign up for free
+        </Link>
       </section>
 
       <FooterSection />
