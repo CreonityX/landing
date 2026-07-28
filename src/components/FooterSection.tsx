@@ -38,6 +38,13 @@ export default function FooterSection() {
               <button className="footer-btn">Sign up</button>
             </Link>
           </div>
+          <div className="footer-address" style={{ marginTop: '32px', fontSize: '13px', color: '#6b7280', lineHeight: 1.6, maxWidth: '250px' }}>
+            <p>Shop number 51 second floor</p>
+            <p>Brass market Rewari</p>
+            <p>Model Town / Gokal Bazaar area,</p>
+            <p>Rewari, Haryana (123401).</p>
+            <p style={{ marginTop: '12px', fontWeight: 600, color: '#374151' }}>+91 93069 06114</p>
+          </div>
         </div>
 
         <div className="footer-links">
