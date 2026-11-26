@@ -1,0 +1,8 @@
+{
+  "name": "creonity-landing",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "npm run build && npx --yes wrangler@4.168.0 dev --ip 127.0.0.1 --port 3041"
+  }
+}
