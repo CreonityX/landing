@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <path id="lipstick" d="M31 99V70h8V56h5V31c0-11 12-16 23-18 4-1 7 1 7 5v38h5v14h8v29a7 7 0 0 1-7 7H38a7 7 0 0 1-7-7Z"/>
+    <path id="spark" d="M93 25q3 12 14 14-11 3-14 14-2-11-13-14 11-2 13-14Z"/>
+  </defs>
+  <g stroke="#fffdf4" stroke-width="12">
+    <use href="#lipstick"/><use href="#spark"/>
+  </g>
+  <use href="#lipstick" fill="#fa1929" stroke="#181719" stroke-width="5"/>
+  <path d="M39 57h40v17H39z" fill="#f4d85a" stroke="#181719" stroke-width="5"/>
+  <path d="M31 74h56v25a7 7 0 0 1-7 7H38a7 7 0 0 1-7-7z" fill="#3155d9" stroke="#181719" stroke-width="5"/>
+  <path d="M51 43V32q0-5 12-9m-21 61v11" fill="none" stroke="#f2eee4" stroke-width="4"/>
+  <use href="#spark" fill="#f4d85a" stroke="#181719" stroke-width="4"/>
+</svg>

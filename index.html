@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#181719">
+  <title>Creonity — Create what you want.</title>
+  <meta name="description" content="Creonity is a creative agency for creator-led campaigns, from the first idea to the final cut.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg class="graphic-definitions" width="0" height="0" aria-hidden="true">
+    <defs>
+      <path id="name-arc" d="M12 57 Q120 5 228 57"/>
+      <path id="category-arc" d="M10 14 Q120 64 230 14"/>
+      <filter id="letter-edge" x="-10%" y="-25%" width="120%" height="150%">
+        <feTurbulence type="fractalNoise" baseFrequency=".062" numOctaves="2" seed="5" result="texture"/>
+        <feDisplacementMap in="SourceGraphic" in2="texture" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <symbol id="instagram-icon" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <circle cx="17.4" cy="6.8" r="1" fill="currentColor"/>
+      </symbol>
+      <symbol id="youtube-icon" viewBox="0 0 24 24">
+        <rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <path d="m10 9 5 3-5 3z" fill="currentColor"/>
+      </symbol>
+      <symbol id="diagonal-arrow" viewBox="0 0 24 24">
+        <path d="M5 19 19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </defs>
+  </svg>
+  <main class="site">
+    <header class="opening" id="top">
+      <!-- Hero photograph by Cemrecan Yurtman, Pexels, photo 38058993. -->
+      <picture class="opening-photo" aria-hidden="true">
+        <source media="(max-width: 640px) and (orientation: portrait)" srcset="assets/hero-production-mobile.webp">
+        <img src="assets/hero-production.webp" alt="" fetchpriority="high">
+      </picture>
+      <img class="sticker" src="assets/creonity-sticker.png" alt="Creonity" width="1024" height="909">
+      <nav class="opening-nav" aria-label="Main navigation">
+        <a href="#creators">Creators</a>
+        <a href="#brands">Brands</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <h1><strong>Cre</strong>ate<br class="narrow-break"> what<br class="wide-break"> you<br class="narrow-break"> want.</h1>
+    </header>
+
+    <section class="showcase" id="creators" aria-labelledby="creators-heading">
+      <h2 id="creators-heading">Creators</h2>
+      <ul class="rail creator-rail" id="creator-rail" tabindex="0" aria-labelledby="creators-heading">
+        <li class="creator creator-wink">
+          <svg class="creator-name" viewBox="0 0 240 62" role="img" aria-label="@Maya">
+            <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">@Maya</textPath></text>
+          </svg>
+          <div class="creator-art">
+            <div class="creator-portrait"><img src="assets/creator-sheet.png" alt="A person winking with their tongue out"></div>
+            <img class="creator-sticker" src="assets/sticker-coffee.svg" alt="" loading="lazy">
+          </div>
+          <svg class="creator-category" viewBox="0 0 240 47" role="img" aria-label="Lifestyle &amp; comedy">
+            <text><textPath href="#category-arc" startOffset="50%" text-anchor="middle">Lifestyle &amp; comedy</textPath></text>
+          </svg>
+          <div class="creator-socials">
+            <a class="creator-social" role="link" aria-disabled="true" aria-label="Instagram link unavailable" title="Instagram link unavailable"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#instagram-icon"/></svg></a>
+            <a class="creator-social" role="link" aria-disabled="true" aria-label="YouTube link unavailable" title="YouTube link unavailable"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#youtube-icon"/></svg></a>
+          </div>
+        </li>
+        <li class="creator creator-frown">
+          <svg class="creator-name" viewBox="0 0 240 62" role="img" aria-label="@Arjun">
+            <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">@Arjun</textPath></text>
+          </svg>
+          <div class="creator-art">
+            <div class="creator-portrait"><img src="assets/creator-sheet.png" alt="A curly-haired person frowning"></div>
+            <img class="creator-sticker" src="assets/sticker-clapper.svg" alt="" loading="lazy">
+          </div>
+          <svg class="creator-category" viewBox="0 0 240 47" role="img" aria-label="Sketch comedy">
+            <text><textPath href="#category-arc" startOffset="50%" text-anchor="middle">Sketch comedy</textPath></text>
+          </svg>
+          <div class="creator-socials">
+            <a class="creator-social" role="link" aria-disabled="true" aria-label="Instagram link unavailable" title="Instagram link unavailable"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#instagram-icon"/></svg></a>
+            <a class="creator-social" role="link" aria-disabled="true" aria-label="YouTube link unavailable" title="YouTube link unavailable"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#youtube-icon"/></svg></a>
+          </div>
+        </li>
+        <li class="creator creator-glance">
+          <svg class="creator-name" viewBox="0 0 240 62" role="img" aria-label="@Kai">
+            <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">@Kai</textPath></text>
+          </svg>
+          <div class="creator-art">
+            <div class="creator-portrait"><img src="assets/creator-sheet.png" alt="A person glancing to the side"></div>
+            <img class="creator-sticker" src="assets/sticker-record.svg" alt="" loading="lazy">
+          </div>
+          <svg class="creator-category" viewBox="0 0 240 47" role="img" aria-label="Music &amp; culture">
+            <text><textPath href="#category-arc" startOffset="50%" text-anchor="middle">Music &amp; culture</textPath></text>
+          </svg>
+          <div class="creator-socials">
+            <a class="creator-social" role="link" aria-disabled="true" aria-label="Instagram link unavailable" title="Instagram link unavailable"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#instagram-icon"/></svg></a>
+            <a class="creator-social" role="link" aria-disabled="true" aria-label="YouTube link unavailable" title="YouTube link unavailable"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#youtube-icon"/></svg></a>
+          </div>
+        </li>
+        <li class="creator creator-pout">
+          <svg class="creator-name" viewBox="0 0 240 62" role="img" aria-label="@Jules">
+            <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">@Jules</textPath></text>
+          </svg>
+          <div class="creator-art">
+            <div class="creator-portrait"><img src="assets/creator-sheet.png" alt="A person with a short bob pursing their lips"></div>
+            <img class="creator-sticker" src="assets/sticker-lipstick.svg" alt="" loading="lazy">
+          </div>
+          <svg class="creator-category" viewBox="0 0 240 47" role="img" aria-label="Style &amp; beauty">
+            <text><textPath href="#category-arc" startOffset="50%" text-anchor="middle">Style &amp; beauty</textPath></text>
+          </svg>
+          <div class="creator-socials">
+            <a class="creator-social" role="link" aria-disabled="true" aria-label="Instagram link unavailable" title="Instagram link unavailable"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#instagram-icon"/></svg></a>
+            <a class="creator-social" role="link" aria-disabled="true" aria-label="YouTube link unavailable" title="YouTube link unavailable"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#youtube-icon"/></svg></a>
+          </div>
+        </li>
+      </ul>
+      <div class="rail-controls" role="group" aria-label="Scroll creators" hidden>
+        <button type="button" data-direction="-1" aria-label="Previous creators" aria-controls="creator-rail" disabled>←</button>
+        <button type="button" data-direction="1" aria-label="Next creators" aria-controls="creator-rail">→</button>
+      </div>
+    </section>
+
+    <section class="showcase brands" id="brands" aria-labelledby="brands-heading">
+      <h2 id="brands-heading">Brands</h2>
+      <ul class="rail brand-rail" id="brand-rail" tabindex="0" aria-labelledby="brands-heading">
+        <li><span class="brand-mark best-buy"><img src="assets/best-buy.svg" alt="Best Buy"></span></li>
+        <li><span class="brand-mark ebay"><img src="assets/ebay.svg" alt="eBay"></span></li>
+        <li><span class="brand-mark general-motors"><img src="assets/general-motors.svg" alt="General Motors"></span></li>
+        <li><span class="brand-mark hp"><img src="assets/hp.svg" alt="HP"></span></li>
+      </ul>
+      <div class="rail-controls" role="group" aria-label="Scroll brands" hidden>
+        <button type="button" data-direction="-1" aria-label="Previous brands" aria-controls="brand-rail" disabled>←</button>
+        <button type="button" data-direction="1" aria-label="Next brands" aria-controls="brand-rail">→</button>
+      </div>
+    </section>
+
+    <section class="services" id="services" aria-labelledby="services-heading">
+      <div class="services-intro">
+        <h2 id="services-heading"><strong>Make</strong> it<br>with us.</h2>
+        <p>We’re a creative agency for creator-led campaigns, from the first idea to the final cut.</p>
+      </div>
+      <div class="services-offer">
+        <dl class="services-list" aria-label="Services">
+          <div>
+            <dt>Campaign strategy</dt>
+            <dd>We find the idea, shape the story and decide where it should show up.</dd>
+          </div>
+          <div>
+            <dt>Creator partnerships</dt>
+            <dd>We find creators who fit the brief and work with them on a concept they can make their own.</dd>
+          </div>
+          <div>
+            <dt>Content production</dt>
+            <dd>We make the work, from short-form video and product shoots to launch films and cutdowns.</dd>
+          </div>
+        </dl>
+        <a class="services-link" href="#contact">Contact us <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#diagonal-arrow"/></svg></a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="contact-inner">
+        <div class="contact-title">
+          <h2 id="contact-heading">Get in <strong>touch.</strong></h2>
+          <img src="assets/creonity-sticker.png" alt="" width="1024" height="909" loading="lazy">
+        </div>
+        <div class="contact-paths">
+          <a href="mailto:connect@creonity.com?subject=Campaign%20enquiry">
+            <span><strong>Email us about a campaign</strong><span>For brands looking for creators or campaign production.</span></span>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#diagonal-arrow"/></svg>
+          </a>
+          <a href="mailto:connect@creonity.com?subject=Creator%20collaboration">
+            <span><strong>Email us as a creator</strong><span>For creators looking to work with brands.</span></span>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#diagonal-arrow"/></svg>
+          </a>
+        </div>
+      </div>
+      <footer class="site-footer">
+        <a href="mailto:connect@creonity.com">connect@creonity.com</a>
+        <a href="#top">Back to top ↑</a>
+      </footer>
+    </section>
+  </main>
+  <script src="rails.js"></script>
+</body>
+</html>
