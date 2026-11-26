@@ -39,7 +39,13 @@
         <img src="assets/hero-production.webp" alt="" fetchpriority="high">
       </picture>
       <img class="sticker" src="assets/creonity-sticker.png" alt="Creonity" width="1024" height="909">
-      <nav class="opening-nav" aria-label="Main navigation">
+      <button class="opening-menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="opening-nav" hidden>
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+          <path class="menu-icon-open" d="M4 6h16M4 12h16M4 18h16"/>
+          <path class="menu-icon-close" d="m6 6 12 12M18 6 6 18"/>
+        </svg>
+      </button>
+      <nav class="opening-nav" id="opening-nav" aria-label="Main navigation">
         <a href="#creators">Creators</a>
         <a href="#brands">Brands</a>
         <a href="#services">Services</a>
@@ -162,27 +168,53 @@
 
     <section class="contact" id="contact" aria-labelledby="contact-heading">
       <div class="contact-inner">
-        <div class="contact-title">
+        <div class="contact-intro">
           <h2 id="contact-heading">Get in <strong>touch.</strong></h2>
-          <img src="assets/creonity-sticker.png" alt="" width="1024" height="909" loading="lazy">
+          <p>Tell us what you’re looking for. We’ll get back to you by email.</p>
+          <a class="contact-email" href="mailto:connect@creonity.com">connect@creonity.com</a>
         </div>
-        <div class="contact-paths">
-          <a href="mailto:connect@creonity.com?subject=Campaign%20enquiry">
-            <span><strong>Email us about a campaign</strong><span>For brands looking for creators or campaign production.</span></span>
-            <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#diagonal-arrow"/></svg>
-          </a>
-          <a href="mailto:connect@creonity.com?subject=Creator%20collaboration">
-            <span><strong>Email us as a creator</strong><span>For creators looking to work with brands.</span></span>
-            <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#diagonal-arrow"/></svg>
-          </a>
-        </div>
+        <form class="contact-form" method="post" action="/api/contact">
+          <fieldset class="contact-role contact-wide">
+            <legend>I’m a…</legend>
+            <div class="contact-choices">
+              <label><input type="radio" name="type" value="brand" required> Brand</label>
+              <label><input type="radio" name="type" value="creator"> Creator</label>
+            </div>
+          </fieldset>
+          <div class="contact-field">
+            <label for="inquiry-name">Name or brand</label>
+            <input id="inquiry-name" name="name" autocomplete="name" maxlength="120" required>
+          </div>
+          <div class="contact-field">
+            <label for="inquiry-email">Email</label>
+            <input id="inquiry-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+          </div>
+          <div class="contact-field contact-wide">
+            <label for="inquiry-instagram">Instagram handle <span>(optional)</span></label>
+            <input id="inquiry-instagram" name="instagram" autocapitalize="none" spellcheck="false" placeholder="@handle" maxlength="120">
+          </div>
+          <div class="contact-field contact-wide">
+            <label for="inquiry-details">What are you looking for?</label>
+            <textarea id="inquiry-details" name="details" aria-describedby="inquiry-hint" rows="4" maxlength="2000" required></textarea>
+            <p class="contact-hint" id="inquiry-hint">Share what you’re planning, when you need it, or links to your work.</p>
+          </div>
+          <div hidden>
+            <label for="inquiry-company-site">Leave this field empty</label>
+            <input id="inquiry-company-site" name="company_site" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="contact-submit contact-wide">
+            <button type="submit">Send inquiry <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#diagonal-arrow"/></svg></button>
+            <p class="contact-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
       </div>
       <footer class="site-footer">
-        <a href="mailto:connect@creonity.com">connect@creonity.com</a>
         <a href="#top">Back to top ↑</a>
       </footer>
     </section>
   </main>
+  <script src="navigation.js"></script>
   <script src="rails.js"></script>
+  <script src="contact.js"></script>
 </body>
 </html>
