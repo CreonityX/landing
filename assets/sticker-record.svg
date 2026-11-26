@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <circle id="disc" cx="56" cy="62" r="43"/>
+    <path id="spark" d="M98 12q2 10 13 13-11 2-13 13-2-11-13-13 11-3 13-13Z"/>
+  </defs>
+  <g stroke="#fffdf4" stroke-width="12">
+    <use href="#disc"/><use href="#spark"/>
+  </g>
+  <use href="#disc" fill="#181719" stroke="#181719" stroke-width="4"/>
+  <path d="M23 59a34 34 0 0 1 34-31M30 61a27 27 0 0 1 27-26m32 30a34 34 0 0 1-34 31m27-33a27 27 0 0 1-27 26" fill="none" stroke="#a9bedb" stroke-width="2.6"/>
+  <circle cx="56" cy="62" r="18" fill="#3155d9"/>
+  <circle cx="56" cy="62" r="4" fill="#f2eee4"/>
+  <use href="#spark" fill="#f4d85a" stroke="#181719" stroke-width="4"/>
+</svg>

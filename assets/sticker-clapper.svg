@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <path id="board" d="M17 51h86v47a5 5 0 0 1-5 5H22a5 5 0 0 1-5-5z"/>
+    <path id="hinge" d="m16 35 80-22a4 4 0 0 1 5 3l4 14-84 23z"/>
+  </defs>
+  <g stroke="#fffdf4" stroke-width="12">
+    <use href="#board"/><use href="#hinge"/>
+  </g>
+  <use href="#board" fill="#b9d2e5" stroke="#181719" stroke-width="5"/>
+  <use href="#hinge" fill="#f2eee4" stroke="#181719" stroke-width="5"/>
+  <path d="m27 32 13 14 13-4-13-14zm26-7 13 14 13-4-13-14zm26-7 13 14 10-3-5-16z" fill="#181719"/>
+  <path d="M20 53h80v13H20z" fill="#181719"/>
+  <path d="m40 53-9 13m34-13-9 13m34-13-9 13" fill="none" stroke="#f2eee4" stroke-width="7"/>
+  <path d="M31 79h46M31 90h23" fill="none" stroke="#181719" stroke-width="4"/>
+  <path d="m81 81 9 5-9 5z" fill="#fa1929" stroke="#181719" stroke-width="2.5"/>
+</svg>
