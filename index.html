@@ -39,31 +39,20 @@
         <img src="assets/hero-production.webp" alt="" fetchpriority="high">
       </picture>
       <img class="sticker" src="assets/creonity-sticker.png" alt="Creonity" width="1024" height="909">
-      <nav class="opening-nav" aria-label="Main navigation">
+      <button class="opening-menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="opening-nav" hidden>
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+          <path class="menu-icon-open" d="M4 6h16M4 12h16M4 18h16"/>
+          <path class="menu-icon-close" d="m6 6 12 12M18 6 6 18"/>
+        </svg>
+      </button>
+      <nav class="opening-nav" id="opening-nav" aria-label="Main navigation">
         <a href="#creators">Creators</a>
         <a href="#brands">Brands</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="opening-campaign-link" href="#campaign">See the launch campaign <svg aria-hidden="true" viewBox="0 0 24 24"><use href="#diagonal-arrow"/></svg></a>
       <h1><strong>Cre</strong>ate<br class="narrow-break"> what<br class="wide-break"> you<br class="narrow-break"> want.</h1>
     </header>
-
-    <section class="campaign" id="campaign" aria-labelledby="campaign-heading">
-      <div class="campaign-art">
-        <!-- Creonity Figma, Social page, frames 51:39 and 51:33. -->
-        <div class="campaign-print campaign-print-dark">
-          <img src="assets/work-create.webp" width="1080" height="1350" loading="lazy" decoding="async" alt="‘Create what you want’ poster with a hand, cursor and pencil sticker.">
-        </div>
-        <div class="campaign-print campaign-print-light">
-          <img src="assets/work-weird.webp" width="1080" height="1350" loading="lazy" decoding="async" alt="‘Nothing is too weird for you’ poster with a camera sticker and a red underline.">
-        </div>
-      </div>
-      <div class="campaign-caption">
-        <h2 id="campaign-heading">The Creonity launch</h2>
-        <p>Our own launch campaign for people who make things. We used oversized Champ type and a set of stickers that carried across the social posters.</p>
-      </div>
-    </section>
 
     <section class="showcase" id="creators" aria-labelledby="creators-heading">
       <h2 id="creators-heading">Creators</h2>
@@ -183,33 +172,31 @@
           <h2 id="contact-heading">Get in <strong>touch.</strong></h2>
           <p>Tell us what you’re looking for. We’ll get back to you by email.</p>
           <a class="contact-email" href="mailto:connect@creonity.com">connect@creonity.com</a>
-          <img class="contact-sticker" src="assets/creonity-sticker.png" alt="" width="1024" height="909" loading="lazy">
         </div>
         <form class="contact-form" method="post" action="/api/contact">
+          <fieldset class="contact-role contact-wide">
+            <legend>I’m a…</legend>
+            <div class="contact-choices">
+              <label><input type="radio" name="type" value="brand" required> Brand</label>
+              <label><input type="radio" name="type" value="creator"> Creator</label>
+            </div>
+          </fieldset>
           <div class="contact-field">
-            <label for="inquiry-type">I’m a</label>
-            <select id="inquiry-type" name="type" required>
-              <option value="" disabled selected>Choose one</option>
-              <option value="brand">Brand</option>
-              <option value="creator">Creator</option>
-            </select>
-          </div>
-          <div class="contact-field">
-            <label for="inquiry-name">Your name or brand name</label>
+            <label for="inquiry-name">Name or brand</label>
             <input id="inquiry-name" name="name" autocomplete="name" maxlength="120" required>
           </div>
           <div class="contact-field">
             <label for="inquiry-email">Email</label>
             <input id="inquiry-email" name="email" type="email" autocomplete="email" maxlength="254" required>
           </div>
-          <div class="contact-field">
+          <div class="contact-field contact-wide">
             <label for="inquiry-instagram">Instagram handle <span>(optional)</span></label>
             <input id="inquiry-instagram" name="instagram" autocapitalize="none" spellcheck="false" placeholder="@handle" maxlength="120">
           </div>
           <div class="contact-field contact-wide">
             <label for="inquiry-details">What are you looking for?</label>
-            <textarea id="inquiry-details" name="details" aria-describedby="inquiry-hint" rows="3" maxlength="2000" required></textarea>
-            <p class="contact-hint" id="inquiry-hint">Brands can share what they’re launching and when. Creators can tell us what they make and include links.</p>
+            <textarea id="inquiry-details" name="details" aria-describedby="inquiry-hint" rows="4" maxlength="2000" required></textarea>
+            <p class="contact-hint" id="inquiry-hint">Share what you’re planning, when you need it, or links to your work.</p>
           </div>
           <div hidden>
             <label for="inquiry-company-site">Leave this field empty</label>
@@ -226,6 +213,7 @@
       </footer>
     </section>
   </main>
+  <script src="navigation.js"></script>
   <script src="rails.js"></script>
   <script src="contact.js"></script>
 </body>

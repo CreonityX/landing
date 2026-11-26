@@ -97,22 +97,7 @@ a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 
 .opening-nav a:hover { text-decoration: underline; }
 
-.opening-campaign-link {
-  position: absolute;
-  inset-inline-start: var(--edge);
-  inset-block-end: var(--edge);
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  min-height: 44px;
-  font-size: clamp(14px, 1.35vw, 19px);
-}
-
-.opening-campaign-link svg {
-  width: 1em;
-  height: 1em;
-  rotate: 90deg;
-}
+.opening-menu-toggle { display: none; }
 
 h1 {
   grid-row: 2;
@@ -128,48 +113,6 @@ h1 strong {
 }
 
 .narrow-break { display: none; }
-
-.campaign-art {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.campaign-print {
-  display: grid;
-  place-items: center;
-}
-
-.campaign-print-dark { background: var(--ink); }
-.campaign-print-light { background: var(--cream); }
-
-.campaign-print img {
-  width: min(100%, 62svh, 520px);
-  height: auto;
-}
-
-.campaign-caption {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: baseline;
-  gap: 12px clamp(24px, 7vw, 112px);
-  padding: clamp(24px, 4vw, 64px) var(--edge);
-  border-bottom: 1px solid #f2eee43d;
-}
-
-.campaign-caption h2 {
-  font-size: clamp(30px, 4.2vw, 64px);
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -.035em;
-}
-
-.campaign-caption p {
-  max-width: 49ch;
-  margin: 0;
-  color: var(--cream);
-  font-size: clamp(16px, 1.55vw, 23px);
-  line-height: 1.35;
-}
 
 .showcase {
   display: grid;
@@ -487,8 +430,6 @@ h1 strong {
 .contact h2 { color: white; }
 .contact h2 strong { color: var(--yellow); font-weight: 800; }
 
-.contact-intro { position: relative; }
-
 .contact-intro p {
   max-width: 26ch;
   margin: 24px 0 14px;
@@ -501,20 +442,12 @@ h1 strong {
   overflow-wrap: anywhere;
 }
 
-.contact-sticker {
-  width: clamp(100px, 13vw, 176px);
-  height: auto;
-  margin-top: 22px;
-  rotate: -13deg;
-}
-
 .contact-form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-content: start;
   align-items: start;
-  gap: 20px 16px;
-  color-scheme: light;
+  gap: 22px 16px;
 }
 
 .contact-field {
@@ -523,28 +456,79 @@ h1 strong {
   min-width: 0;
 }
 
-.contact-field label {
+.contact-field label, .contact-role legend {
   font-size: 16px;
   line-height: 1.25;
 }
 
 .contact-field label span { color: #e0e5ff; }
 
-.contact-field :is(input, select, textarea) {
-  width: 100%;
-  min-height: 46px;
-  padding: 10px 12px;
-  border: 1px solid transparent;
+.contact-role {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.contact-role legend { padding: 0; margin-bottom: 8px; }
+
+.contact-choices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.contact-choices label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 8px 12px;
+  border: 1px solid #f2eee482;
   border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-choices label:has(:checked) {
   background: var(--cream);
+  border-color: var(--cream);
   color: var(--ink);
+  color-scheme: light;
+}
+
+.contact-choices input {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  padding: 3px;
+  appearance: none;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  background-clip: content-box;
+}
+
+.contact-choices input:checked {
+  color: var(--cobalt);
+  background-color: var(--cobalt);
+}
+
+.contact-field :is(input, textarea) {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid #f2eee482;
+  border-radius: 4px;
+  background: #2444ba;
+  color: white;
   font: inherit;
   font-size: 16px;
 }
 
+.contact-field input::placeholder { color: #e0e5ff; }
 .contact-field textarea { resize: vertical; }
 
-.contact-field :is(input, select, textarea):focus-visible,
+.contact-field :is(input, textarea):focus-visible,
+.contact-choices label:has(:focus-visible),
 .contact-submit button:focus-visible {
   outline: 2px solid white;
   outline-offset: 3px;
@@ -597,30 +581,76 @@ h1 strong {
 }
 
 @media (max-width: 680px) {
-  .campaign-caption { grid-template-columns: 1fr; }
   .rail { --slot-width: 100%; }
-  .opening-nav {
+
+  .opening-menu-toggle:not([hidden]) {
+    z-index: 2;
+    grid-area: 1 / 1;
+    justify-self: end;
+    align-self: start;
     display: grid;
-    grid-template-columns: repeat(2, auto);
-    column-gap: clamp(10px, 4vw, 22px);
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid #f2eee470;
+    border-radius: 50%;
+    background: var(--ink);
+    color: white;
+    cursor: pointer;
+    touch-action: manipulation;
   }
-  .opening-nav a { padding-block: 10px; }
+
+  .opening-menu-toggle svg { width: 22px; height: 22px; }
+  .opening-menu-toggle:focus-visible { outline: 2px solid white; outline-offset: 4px; }
+  .opening-menu-toggle[aria-expanded="false"] .menu-icon-close,
+  .opening-menu-toggle[aria-expanded="true"] .menu-icon-open,
+  .opening-menu-toggle:not([hidden])[aria-expanded="false"] + .opening-nav { display: none; }
+
+  .opening-nav {
+    z-index: 1;
+    position: absolute;
+    inset-block-start: calc(var(--edge) + 58px);
+    inset-inline-end: var(--edge);
+    display: grid;
+    justify-content: stretch;
+    width: min(204px, calc(100% - var(--edge) * 2));
+    padding-inline: 16px;
+    background: var(--ink);
+    border: 1px solid #f2eee44d;
+    border-radius: 4px;
+    font-size: 18px;
+  }
+
+  .opening-nav a {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 8px 0;
+  }
+
+  .opening-nav a + a { border-top: 1px solid #f2eee42b; }
+  .opening-nav a:active { color: var(--yellow); }
+
   .services, .contact-inner, .contact-form { grid-template-columns: 1fr; }
   .services { align-content: center; }
   .contact h2 { font-size: clamp(44px, 12vw, 78px); }
-  .contact-sticker { display: none; }
-  .contact-form { row-gap: 16px; }
+  .contact-form { row-gap: 18px; }
+  .contact-intro p { margin-top: 14px; }
 }
 
 @media (max-width: 640px) and (orientation: portrait) {
   .opening { --sticker-size: clamp(124px, 36vw, 188px); }
-  .opening-photo img { object-position: 56% center; }
+  .opening-photo { inset-block-start: 34%; }
+  .opening-photo img { object-position: 43% 42%; }
   .opening-photo::after {
-    background:
-      linear-gradient(90deg, #181719df, #18171975 53%, #1817191a),
-      linear-gradient(180deg, #181719c9, transparent 30%, transparent 64%, #181719 100%);
+    background: linear-gradient(180deg, var(--ink), #18171922 28%, transparent 65%, #1817198c);
   }
-  h1 { font-size: min(9.95cqi, 11svh); }
+  .opening h1 {
+    align-self: start;
+    margin-top: clamp(30px, 8svh, 84px);
+    font-size: min(11.2cqi, 11svh);
+  }
   .wide-break { display: none; }
   .narrow-break { display: initial; }
 }
@@ -640,4 +670,5 @@ h1 strong {
 
 @media (forced-colors: active) {
   h1 strong { color: CanvasText; }
+  .contact-choices input { appearance: auto; }
 }
